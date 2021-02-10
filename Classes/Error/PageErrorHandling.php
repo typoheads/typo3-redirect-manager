@@ -13,6 +13,7 @@ use TYPO3\CMS\Core\Http\HtmlResponse;
 use TYPO3\CMS\Core\Http\RedirectResponse;
 use TYPO3\CMS\Core\Site\SiteFinder;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use Typoheads\Utilities\Utility\ConnectionPoolTrait;
 
 /**
  * Provides custom error-handlers.
@@ -21,6 +22,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class PageErrorHandling implements PageErrorHandlerInterface
 {
+    use ConnectionPoolTrait;
+
     /**
      * @inheritDoc
      */
@@ -38,7 +41,7 @@ class PageErrorHandling implements PageErrorHandlerInterface
 
         // Log this 404 error request
         if (!empty($configuration['enableNotFoundLogging'])) {
-
+            $this->addLogEntry($request, $message, $reasons);
         }
 
         // Return final response
@@ -180,5 +183,81 @@ class PageErrorHandling implements PageErrorHandlerInterface
         }
 
         return $errorHandler->handlePageError($request, $message, $reasons);
+    }
+
+
+
+    /**
+     * Adds a log entry for the given 404 request.
+     *
+     * @param \Psr\Http\Message\ServerRequestInterface $request Server request
+     * @param string $message Error message
+     * @param array $reasons Error reasons
+     *
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    private function addLogEntry(ServerRequestInterface $request, string $message, array $reasons = []): void
+    {
+        $now = new \DateTime();
+
+        // Create unique hash from the URL
+        $url = (string)$request->getUri();
+        $hash = sha1($url);
+
+        // Create data to be written into the database
+        $entry = [
+            'crdate' => $now->getTimestamp(),
+            'deleted' => 0,
+            'hash' => $hash,
+            'url' => $url,
+            'hit_count' => 0,
+            'is_resolved' => 0,
+            'has_reappeared_count' => 0
+        ];
+
+        // Check if there already is a log entry for this specific URL
+        $query = $this->getConnectionPool()->getQueryBuilderForTable('tx_redirectmanager_not_found_log');
+
+        $previousEntry = $query->select('*')
+            ->from('tx_redirectmanager_not_found_log')
+            ->where(
+                $query->expr()->eq('hash', $query->createNamedParameter($hash))
+            )
+            ->execute()
+            ->fetch();
+
+        // There is no log entry for this URL yet; create a new one
+        if (empty($previousEntry)) {
+            $query->resetQueryParts();
+            $query->insert('tx_redirectmanager_not_found_log')
+                ->values($entry)
+                ->execute();
+        } // There already is a log entry for this URL; update the existing entry
+        else {
+            // Increase hit count
+            $entry['hit_count'] = $previousEntry['hit_count'] + 1;
+
+            // Check if this url was marked as resolved, but reappeared again
+            if ((bool)$previousEntry['is_resolved'] === true) {
+                // Mark as not resolved again
+                $entry['is_resolved'] = 0;
+
+                // Increase the counter for how often this URL has reappeared
+                $entry['has_reappeared_count'] = $previousEntry['has_reappeared_count'] + 1;
+            }
+
+            // Update entry in database
+            $query->resetQueryParts();
+            $query->update('tx_redirectmanager_not_found_log');
+
+            foreach ($entry as $field => $value) {
+                $query->set($field, $value);
+            }
+
+            $query->where(
+                $query->expr()->eq('hash', $query->createNamedParameter($hash))
+            )
+                ->execute();
+        }
     }
 }
