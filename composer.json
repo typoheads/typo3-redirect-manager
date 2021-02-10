@@ -1,9 +1,9 @@
 {
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "name": "typoheads/typo3-redirects",
+    "name": "typoheads/typo3-redirect-manager",
     "type": "typo3-cms-extension",
-    "description": "Provides additional functionality for dealing with redirects in TYPO3.",
+    "description": "Allows to manage URL- and page-redirects from a TYPO3 backend module.",
     "keywords": [
         "TYPO3",
         "extension",
@@ -20,18 +20,19 @@
     ],
     "require": {
         "typo3/cms-core": "^10.4.6",
+        "typo3/cms-redirects": "^10.4.6",
         "typoheads/typo3-backend-improvements": "^10.4",
         "ext-json": "*",
         "ext-curl": "*"
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "redirects"
+            "extension-key": "redirect_manager"
         }
     },
     "autoload": {
         "psr-4": {
-            "Typoheads\\Redirects\\": "Classes"
+            "Typoheads\\RedirectManager\\": "Classes"
         }
     }
 }

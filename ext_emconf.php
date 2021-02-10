@@ -1,8 +1,8 @@
 <?php
 
-$EM_CONF['redirects'] = [
-    'title' => 'Redirects',
-    'description' => 'Provides additional functionality for dealing with redirects in TYPO3.',
+$EM_CONF['redirect_manager'] = [
+    'title' => 'Redirect Manager',
+    'description' => 'Allows to manage URL- and page-redirects from a TYPO3 backend module.',
     'version' => '1.0.0',
     'category' => 'module',
     'constraints' => [
