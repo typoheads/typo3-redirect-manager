@@ -1,0 +1,37 @@
+# IntelliJ
+.idea
+
+# NetBeans
+nbproject/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# eclipse
+.buildpath
+.project
+local.properties
+.metadata/
+.loadpath
+.recommenders
+.externalToolBuilders/
+*.launch
+*.pydevproject
+.cproject
+.classpath
+.factorypath
+.target
+.tern-project
+.texlipse
+.springBeans
+.recommenders/
+
+# Windows
+Thumbs.db
+*.lnk
+
+# Mac
+.DS_Store
+
+# node.js
+node_modules
