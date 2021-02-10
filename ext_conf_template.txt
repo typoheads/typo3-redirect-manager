@@ -1,0 +1,8 @@
+# cat=Page Error Handling; type=options[LLL:EXT:redirect_manager/Resources/Private/Language/Backend/Backend.xlf:configuration.pageErrorHandlingResponseType.default=default,LLL:EXT:redirect_manager/Resources/Private/Language/Backend/Backend.xlf:configuration.pageErrorHandlingResponseType.url=url,LLL:EXT:redirect_manager/Resources/Private/Language/Backend/Backend.xlf:configuration.pageErrorHandlingResponseType.page=page,LLL:EXT:redirect_manager/Resources/Private/Language/Backend/Backend.xlf:configuration.pageErrorHandlingResponseType.class=class,LLL:EXT:redirect_manager/Resources/Private/Language/Backend/Backend.xlf:configuration.pageErrorHandlingResponseType.exception=exception]; label=LLL:EXT:redirect_manager/Resources/Private/Language/Backend/Backend.xlf:configuration.pageErrorHandlingResponseType
+pageErrorHandlingResponseType = default
+
+# cat=Page Error Handling; type=string; label=LLL:EXT:redirect_manager/Resources/Private/Language/Backend/Backend.xlf:configuration.pageErrorHandlingResponseValue
+pageErrorHandlingResponseValue =
+
+# cat=Page Error Handling; type=boolean; label=LLL:EXT:redirect_manager/Resources/Private/Language/Backend/Backend.xlf:configuration.enableNotFoundLogging
+enableNotFoundLogging = 0

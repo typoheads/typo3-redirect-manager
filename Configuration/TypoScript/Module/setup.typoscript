@@ -1,0 +1,16 @@
+module.tx_redirectmanager {
+    view {
+        templateRootPaths {
+            0 = EXT:redirect_manager/Resources/Private/Templates/Backend/Module/Templates/
+        }
+
+        partialRootPaths {
+            0 = EXT:backend/Resources/Private/Partials/
+            10 = EXT:redirect_manager/Resources/Private/Templates/Backend/Module/Partials/
+        }
+
+        layoutRootPaths {
+            0 = EXT:redirect_manager/Resources/Private/Templates/Backend/Module/Layouts/
+        }
+    }
+}

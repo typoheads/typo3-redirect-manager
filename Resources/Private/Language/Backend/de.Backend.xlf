@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2021-02-10T09:00:00Z"
+          product-name="redirect_manager">
+        <header/>
+        <body>
+            <!--
+                Backend module.
+            -->
+            <!-- Redirects->index -->
+            <trans-unit id="backendModule.redirects.index.title" xml:space="preserve">
+                <target>Weiterleitungen+</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.index.description" xml:space="preserve">
+                <target>Stellt erweiterte Funktionen und Tools zur Weiterleitungsverwaltung zur Verfügung.</target>
+            </trans-unit>
+
+            <!-- Redirects->listNotFound -->
+            <trans-unit id="backendModule.redirects.listNotFound.title" xml:space="preserve">
+                <target>"Nicht gefunden" Weiterleitungen</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.description" xml:space="preserve">
+                <target>Zeigt alle "404 Nicht gefunden"-Anfrage an. Mit Hilfe dieser Liste können zum Beispiel kaputte oder verloren gegangene Links korrigiert werden.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

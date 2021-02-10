@@ -1,0 +1,28 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:b="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    xmlns:u="http://typo3.org/ns/Typoheads/Utilities/ViewHelper"
+    data-namespace-typo3-fluid="true"
+>
+
+<f:layout name="Default"/>
+
+
+
+<f:section name="Header">
+    <h1>{u:translate.backend(key: 'backendModule.redirects.index.title', extension: 'redirect_manager')}</h1>
+    <f:be.infobox state="-1">{u:translate.backend(key: 'backendModule.redirects.index.description', extension: 'redirect_manager')}</f:be.infobox>
+</f:section>
+
+
+
+<f:section name="Main">
+    <div data-action="index">
+        <f:comment>
+            <!--Current empty. As of now, only one action that actually does something exists. This action here may be used to collect all features within this backend module. The user can the select the function desired.--></f:comment>
+    </div>
+</f:section>
+
+
+
+</html>

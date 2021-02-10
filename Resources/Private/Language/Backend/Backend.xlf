@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2021-02-10T09:00:00Z" product-name="redirect_manager">
+        <header/>
+        <body>
+            <!--
+                Extension configuration.
+            -->
+            <trans-unit id="configuration.pageErrorHandlingResponseType" xml:space="preserve">
+                <source>What response to produce, after the custom 404 error-handler was executed.</source>
+            </trans-unit>
+            <trans-unit id="configuration.pageErrorHandlingResponseType.default" xml:space="preserve">
+                <source>(Default) Imitate default ErrorPageController.</source>
+            </trans-unit>
+            <trans-unit id="configuration.pageErrorHandlingResponseType.url" xml:space="preserve">
+                <source>Redirect to URL. The given parameter below will be interpreted as the target URL.</source>
+            </trans-unit>
+            <trans-unit id="configuration.pageErrorHandlingResponseType.page" xml:space="preserve">
+                <source>Redirect to TYPO3 page. The given parameter below will be interpreted as a page UID.</source>
+            </trans-unit>
+            <trans-unit id="configuration.pageErrorHandlingResponseType.class" xml:space="preserve">
+                <source>Redirect via PHP-Class. The given parameter below is an ErrorHandler implementing PageErrorHandlerInterface.</source>
+            </trans-unit>
+            <trans-unit id="configuration.pageErrorHandlingResponseType.exception" xml:space="preserve">
+                <source>Throw PageNotFoundException. Probably unsafe for production-environments.</source>
+            </trans-unit>
+            <trans-unit id="configuration.pageErrorHandlingResponseValue" xml:space="preserve">
+                <source>The response-parameter. Meaning depends on what was previously selected as the response-type.</source>
+            </trans-unit>
+            <trans-unit id="configuration.enableNotFoundLogging" xml:space="preserve">
+                <source>Whether to log 404-errors into a database table. This data is then used by the backend module to display possibly broken URLs.</source>
+            </trans-unit>
+
+
+            <!--
+                Backend module.
+            -->
+            <!-- Redirects->index -->
+            <trans-unit id="backendModule.redirects.index.title" xml:space="preserve">
+                <source>Redirects+</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.index.description" xml:space="preserve">
+                <source>Provides additional tools for managing redirects.</source>
+            </trans-unit>
+
+            <!-- Redirects->listNotFound -->
+            <trans-unit id="backendModule.redirects.listNotFound.title" xml:space="preserve">
+                <source>"Not Found" redirects</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.description" xml:space="preserve">
+                <source>Lists all "404 Not Found"-requests. With the help of this list, e.g. broken or missing redirects can be fixed by creating new redirects.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
