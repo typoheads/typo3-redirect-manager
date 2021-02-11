@@ -1,8 +1,6 @@
 [data-module="redirects"] [data-action="listNotFound"] .status {
     width: 100%;
-    height: 2rem;
-    padding: 0 0.5rem;
-    line-height: 2rem;
+    padding: 0.25rem 0.5rem;
     font-family: monospace;
     font-weight: bold;
     text-align: center;
