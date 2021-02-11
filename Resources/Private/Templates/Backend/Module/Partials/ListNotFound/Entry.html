@@ -12,34 +12,22 @@
     <td>
         <f:switch expression="{entry.status}">
             <f:case value="isResolved">
-                <div
-                    class="status is-resolved"
-                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.statusLong.isResolved', extension: 'redirect_manager')}"
-                >
+                <div class="status is-resolved">
                     <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status.isResolved"/>
                 </div>
             </f:case>
             <f:case value="isResolvedButHasReappeared">
-                <div
-                    class="status is-resolved-but-has-reappeared"
-                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.statusLong.isResolvedButHasReappeared', extension: 'redirect_manager')}"
-                >
+                <div class="status is-resolved-but-has-reappeared">
                     <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status.isResolvedButHasReappeared"/>
                 </div>
             </f:case>
             <f:case value="isNew">
-                <div
-                    class="status is-new"
-                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.statusLong.isNew', extension: 'redirect_manager')}"
-                >
+                <div class="status is-new">
                     <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status.isNew"/>
                 </div>
             </f:case>
             <f:case value="hasNewHits">
-                <div
-                    class="status has-new-hits"
-                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.statusLong.hasNewHits', extension: 'redirect_manager')}"
-                >
+                <div class="status has-new-hits">
                     <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status.hasNewHits"/>
                 </div>
             </f:case>
@@ -63,7 +51,7 @@
             class="btn btn-default"
             title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.edit', extension: 'redirect_manager')}"
         >
-            <c:icon identifier="actions-open"/>
+            <c:icon identifier="actions-eye"/>
         </b:link.editRecord>
 
         <f:link.action

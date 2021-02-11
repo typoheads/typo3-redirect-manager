@@ -43,10 +43,29 @@
 
             <!--Redirects->listNotFound-->
             <trans-unit id="backendModule.redirects.listNotFound.title" xml:space="preserve">
-                <target>"Nicht gefunden" Weiterleitungen</target>
+                <target>"404 Nicht gefunden" Anfragen</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.description" xml:space="preserve">
                 <target>Zeigt alle "404 Nicht gefunden"-Anfrage an. Mit Hilfe dieser Liste können zum Beispiel kaputte oder verloren gegangene Links korrigiert werden.</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.legend" xml:space="preserve">
+                <target>Legende</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.legend.description" xml:space="preserve">
+                <target><![CDATA[<ul>
+    <li><strong>Status:</strong> Zeigt auf einen Überblick an, wie der aktuelle Status dieser 404-Anfrage ist.
+        <ul>
+            <li><em>Neu:</em> Dieser 404-Fehler ist zum ersten Mal aufgetaucht, d.h. die damit verbundene URL wurde bisher einmal aufgerufen.</li>
+            <li><em>Neue Aufrufe:</em> Dieser 404-Fehler ist bereits mehrere Male aufgetaucht.</li>
+            <li><em>Behoben:</em> Dieser 404-Fehler wurde als behoben markiert und ist seit dem auch nie wieder aufgetaucht.</li>
+            <li><em>Wiederaufgetaucht:</em> Dieser 404-Fehler wurde als behoben markiert, ist seit dem allerdings erneut aufgetaucht. Siehe auch "Anzahl wieder aufgetaucht".</li>
+        </ul>
+    </li>
+    <li><strong>URL:</strong> Die URL, die zu diesem 404-Fehler geführt hat.</li>
+    <li><strong>Anzahl aufgerufen:</strong> Zählt, wie oft dieser 404-Fehler aufgerufen wurde. Jeder Aufruf erhöht diesen Zähler.</li>
+    <li><strong>Anzahl wieder aufgetaucht:</strong> Dieser Zähler wird erhöht, wenn ein 404-Fehler als "behoben" markiert wurde, danach aber erneut aufgerufen wurde. Dies kann darauf hindeuten, dass ein zuvor behobener 404-Fehler, doch noch an anderer Stelle aufgerufen wird.</li>
+    <li><strong>Aktionen:</strong> Funktionen zur Verwaltung dieser 404-Anfrage.</li>
+</ul>]]></target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.status" xml:space="preserve">
                 <target>Status</target>
@@ -63,26 +82,11 @@
             <trans-unit id="backendModule.redirects.listNotFound.table.status.hasNewHits" xml:space="preserve">
                 <target>Neue Aufrufe</target>
             </trans-unit>
-            <trans-unit id="backendModule.redirects.listNotFound.table.statusLong.isResolved" xml:space="preserve">
-                <target>Ist als behoben markiert</target>
-            </trans-unit>
-            <trans-unit id="backendModule.redirects.listNotFound.table.statusLong.isResolvedButHasReappeared" xml:space="preserve">
-                <target>War als behoben markiert, ist aber wieder aufgetaucht</target>
-            </trans-unit>
-            <trans-unit id="backendModule.redirects.listNotFound.table.statusLong.isNew" xml:space="preserve">
-                <target>Ist neu</target>
-            </trans-unit>
-            <trans-unit id="backendModule.redirects.listNotFound.table.statusLong.hasNewHits" xml:space="preserve">
-                <target>Hat neue Aufrufe</target>
-            </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.url" xml:space="preserve">
                 <target>URL</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.hitCount" xml:space="preserve">
                 <target>Anzahl aufgerufen</target>
-            </trans-unit>
-            <trans-unit id="backendModule.redirects.listNotFound.table.isResolved" xml:space="preserve">
-                <target>Ist behoben</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.hasReappearedCount" xml:space="preserve">
                 <target>Anzahl wieder aufgetaucht</target>

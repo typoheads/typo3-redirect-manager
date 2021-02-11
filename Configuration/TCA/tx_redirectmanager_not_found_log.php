@@ -11,7 +11,7 @@ return [
         'default_sortby' => 'crdate DESC',
         'crdate' => 'crdate',
         'searchFields' => 'url,hash,hit_count,is_resolved,has_reappeared_count',
-        'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/actions/actions-unlink.svg'
+        'iconfile' => 'EXT:core/Resources/Public/Icons/T3Icons/svgs/actions/actions-link.svg'
     ],
     'types' => [
         '1' => [
