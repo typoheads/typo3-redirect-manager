@@ -80,7 +80,7 @@
                 <source>Legend</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.legend.description" xml:space="preserve">
-                <target><![CDATA[<ul>
+                <source><![CDATA[<ul>
     <li><strong>Status:</strong> Shows at a glance, what the current state of the 404-error is.
         <ul>
             <li><em>New:</em> This 404-error has appeared for the first time. This means, that the corresponding URL was only called once.</li>
@@ -93,7 +93,7 @@
     <li><strong>Hit count:</strong> Counts how often this 404-error has appeared. Every request to this URL increases this counter.</li>
     <li><strong>Has-reappeared count:</strong> This counter will be increased, when a previously "resolved" 404-error has reappeared again afterwards. This can point to some ongoing problem with the URL even after it was marked as "resolved".</li>
     <li><strong>Actions:</strong> Functions to manage this 404-error.</li>
-</ul>]]></target>
+</ul>]]></source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.noEntriesFound" xml:space="preserve">
                 <source>No "404 Not Found" log entries found.</source>
