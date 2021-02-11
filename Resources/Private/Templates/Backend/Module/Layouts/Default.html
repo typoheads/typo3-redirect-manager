@@ -5,7 +5,11 @@
 
 
 
-<f:be.container>
+<f:be.container
+    includeCssFiles="{
+        0: '{f:uri.resource(path: \'Css/Backend/backend.min.css\')}'
+    }"
+>
     <div data-module="redirects">
         <div class="module-body t3js-module-body">
             <f:render section="Header"/>

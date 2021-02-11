@@ -1,0 +1,31 @@
+[data-module="redirects"] [data-action="listNotFound"] {
+    .status {
+        width: 100%;
+        height: 2rem;
+
+        line-height: 2rem;
+        font-family: monospace;
+        font-weight: bold;
+        text-align: center;
+
+        &.is-resolved {
+            background-color: #00cc66;
+            color: white;
+        }
+
+        &.is-resolved-but-has-reappeared {
+            background-color: #f1ea22;
+            color: black;
+        }
+
+        &.is-new {
+            background-color: #58a1ff;
+            color: white;
+        }
+
+        &.has-new-hits {
+            background-color: #00479f;
+            color: white;
+        }
+    }
+}

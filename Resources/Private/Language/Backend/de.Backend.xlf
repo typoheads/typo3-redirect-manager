@@ -7,7 +7,33 @@
             <!--
                 Backend module.
             -->
-            <!-- Redirects->index -->
+            <!--Redirects-->
+            <trans-unit id="tx_redirectmanager_not_found_log.listTitle" xml:space="preserve">
+                <target>"404 Not Found" Log-Eintrag</target>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.url" xml:space="preserve">
+                <target>URL</target>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.url" xml:space="preserve">
+                <target>URL</target>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.hash" xml:space="preserve">
+                <target>Gehashte URL</target>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.hit_count" xml:space="preserve">
+                <target>Anzahl wie oft diese URL aufgerufen wurde</target>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.is_resolved" xml:space="preserve">
+                <target>Diese URL ist behoben/abgearbeitet/bekannt</target>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.is_resolved.1" xml:space="preserve">
+                <target>Ja</target>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.has_reappeared_count" xml:space="preserve">
+                <target>Anzahl wie oft diese URL aufgerufen wurde, nachdem sie als behoben markiert wurde</target>
+            </trans-unit>
+
+            <!--Redirects->index-->
             <trans-unit id="backendModule.redirects.index.title" xml:space="preserve">
                 <target>Weiterleitungen+</target>
             </trans-unit>
@@ -15,12 +41,69 @@
                 <target>Stellt erweiterte Funktionen und Tools zur Weiterleitungsverwaltung zur Verfügung.</target>
             </trans-unit>
 
-            <!-- Redirects->listNotFound -->
+            <!--Redirects->listNotFound-->
             <trans-unit id="backendModule.redirects.listNotFound.title" xml:space="preserve">
                 <target>"Nicht gefunden" Weiterleitungen</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.description" xml:space="preserve">
                 <target>Zeigt alle "404 Nicht gefunden"-Anfrage an. Mit Hilfe dieser Liste können zum Beispiel kaputte oder verloren gegangene Links korrigiert werden.</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.status" xml:space="preserve">
+                <target>Status</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.status.isResolved" xml:space="preserve">
+                <target>Behoben</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.status.isResolvedButHasReappeared" xml:space="preserve">
+                <target>Wiederaufgetaucht</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.status.isNew" xml:space="preserve">
+                <target>Neu</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.status.hasNewHits" xml:space="preserve">
+                <target>Neue Aufrufe</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.statusLong.isResolved" xml:space="preserve">
+                <target>Ist als behoben markiert</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.statusLong.isResolvedButHasReappeared" xml:space="preserve">
+                <target>War als behoben markiert, ist aber wieder aufgetaucht</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.statusLong.isNew" xml:space="preserve">
+                <target>Ist neu</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.statusLong.hasNewHits" xml:space="preserve">
+                <target>Hat neue Aufrufe</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.url" xml:space="preserve">
+                <target>URL</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.hitCount" xml:space="preserve">
+                <target>Anzahl aufgerufen</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.isResolved" xml:space="preserve">
+                <target>Ist behoben</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.hasReappearedCount" xml:space="preserve">
+                <target>Anzahl wieder aufgetaucht</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions" xml:space="preserve">
+                <target>Aktionen</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions.edit" xml:space="preserve">
+                <target>Log-Eintrag editieren</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions.delete" xml:space="preserve">
+                <target>Log-Eintrag löschen</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions.createRedirect" xml:space="preserve">
+                <target>Weiterleitung mit der TYPO3 Core-Extensions "redirects" erstellen</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions.resolve" xml:space="preserve">
+                <target>Als "behoben" markieren</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions.unresolve" xml:space="preserve">
+                <target>Als "nicht behoben" markieren</target>
             </trans-unit>
         </body>
     </file>

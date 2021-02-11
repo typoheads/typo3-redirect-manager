@@ -1,0 +1,28 @@
+[data-module="redirects"] [data-action="listNotFound"] .status {
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    font-family: monospace;
+    font-weight: bold;
+    text-align: center;
+}
+
+[data-module="redirects"] [data-action="listNotFound"] .status.is-resolved {
+    background-color: #00cc66;
+    color: white;
+}
+
+[data-module="redirects"] [data-action="listNotFound"] .status.is-resolved-but-has-reappeared {
+    background-color: #f1ea22;
+    color: black;
+}
+
+[data-module="redirects"] [data-action="listNotFound"] .status.is-new {
+    background-color: #58a1ff;
+    color: white;
+}
+
+[data-module="redirects"] [data-action="listNotFound"] .status.has-new-hits {
+    background-color: #00479f;
+    color: white;
+}

@@ -11,7 +11,7 @@ if (!defined('TYPO3_MODE')) {
     'Redirects',
     'after:redirects',
     [
-        \Typoheads\RedirectManager\Controller\Backend\Module\RedirectsController::class => 'index,listNotFound'
+        \Typoheads\RedirectManager\Controller\Backend\Module\RedirectsController::class => 'index,listNotFound,deleteNotFoundLog,resolveNotFoundLog,unresolveNotFoundLog'
     ],
     [
         'access' => 'admin',

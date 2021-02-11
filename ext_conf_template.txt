@@ -6,3 +6,6 @@ pageErrorHandlingResponseValue =
 
 # cat=Page Error Handling; type=boolean; label=LLL:EXT:redirect_manager/Resources/Private/Language/Backend/Backend.xlf:configuration.enableNotFoundLogging
 enableNotFoundLogging = 0
+
+# cat=Page Error Handling; type=int+; label=LLL:EXT:redirect_manager/Resources/Private/Language/Backend/Backend.xlf:configuration.notFoundLogStorage
+notFoundLogStorage = 0

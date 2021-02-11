@@ -41,7 +41,8 @@ class PageErrorHandling implements PageErrorHandlerInterface
 
         // Log this 404 error request
         if (!empty($configuration['enableNotFoundLogging'])) {
-            $this->addLogEntry($request, $message, $reasons);
+            $storagePid = empty($configuration['notFoundLogStorage']) ? 0 : (int)$configuration['notFoundLogStorage'];
+            $this->addLogEntry($request, $message, $reasons, $storagePid);
         }
 
         // Return final response
@@ -193,10 +194,11 @@ class PageErrorHandling implements PageErrorHandlerInterface
      * @param \Psr\Http\Message\ServerRequestInterface $request Server request
      * @param string $message Error message
      * @param array $reasons Error reasons
+     * @param int $storagePid (Optional) Storage PID where the log messages are saved to (defaults to 0)
      *
      * @return \Psr\Http\Message\ResponseInterface
      */
-    private function addLogEntry(ServerRequestInterface $request, string $message, array $reasons = []): void
+    private function addLogEntry(ServerRequestInterface $request, string $message, array $reasons = [], int $storagePid = 0): void
     {
         $now = new \DateTime();
 
@@ -206,11 +208,11 @@ class PageErrorHandling implements PageErrorHandlerInterface
 
         // Create data to be written into the database
         $entry = [
+            'pid' => $storagePid,
             'crdate' => $now->getTimestamp(),
-            'deleted' => 0,
             'hash' => $hash,
             'url' => $url,
-            'hit_count' => 0,
+            'hit_count' => 1,
             'is_resolved' => 0,
             'has_reappeared_count' => 0
         ];
@@ -237,13 +239,17 @@ class PageErrorHandling implements PageErrorHandlerInterface
             // Increase hit count
             $entry['hit_count'] = $previousEntry['hit_count'] + 1;
 
-            // Check if this url was marked as resolved, but reappeared again
-            if ((bool)$previousEntry['is_resolved'] === true) {
-                // Mark as not resolved again
-                $entry['is_resolved'] = 0;
+            // Keep previous reappeared-count, if present
+            $entry['has_reappeared_count'] = $previousEntry['has_reappeared_count'];
 
-                // Increase the counter for how often this URL has reappeared
-                $entry['has_reappeared_count'] = $previousEntry['has_reappeared_count'] + 1;
+            // The URL was previously resolved, but has now reappeared for the first time
+            // Set as not resolved and initialize reappeared-counter
+            if ((bool)$previousEntry['is_resolved'] === true && $previousEntry['has_reappeared_count'] === 0) {
+                $entry['is_resolved'] = 0;
+                $entry['has_reappeared_count'] = 1;
+            } // If an active reappeared-counter is present, increase the count on each new hit
+            elseif ($entry['has_reappeared_count'] >= 1) {
+                $entry['has_reappeared_count']++;
             }
 
             // Update entry in database

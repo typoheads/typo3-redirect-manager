@@ -30,12 +30,38 @@
             <trans-unit id="configuration.enableNotFoundLogging" xml:space="preserve">
                 <source>Whether to log 404-errors into a database table. This data is then used by the backend module to display possibly broken URLs.</source>
             </trans-unit>
+            <trans-unit id="configuration.notFoundLogStorage" xml:space="preserve">
+                <source>Storage PID where to save 404-errors. Defaults to the 0-root page.</source>
+            </trans-unit>
 
 
             <!--
                 Backend module.
             -->
-            <!-- Redirects->index -->
+            <!--Redirects-->
+            <trans-unit id="tx_redirectmanager_not_found_log.listTitle" xml:space="preserve">
+                <source>"404 Not Found" log entry</source>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.url" xml:space="preserve">
+                <source>URL</source>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.hash" xml:space="preserve">
+                <source>Hashed URL</source>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.hit_count" xml:space="preserve">
+                <source>Number of hits for this URL</source>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.is_resolved" xml:space="preserve">
+                <source>Whether this URL has been resolved/fixed</source>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.is_resolved.1" xml:space="preserve">
+                <source>Yes</source>
+            </trans-unit>
+            <trans-unit id="tx_redirectmanager_not_found_log.has_reappeared_count" xml:space="preserve">
+                <source>Number of times this URL was hit after it was already resolved</source>
+            </trans-unit>
+
+            <!--Redirects->index-->
             <trans-unit id="backendModule.redirects.index.title" xml:space="preserve">
                 <source>Redirects+</source>
             </trans-unit>
@@ -43,12 +69,69 @@
                 <source>Provides additional tools for managing redirects.</source>
             </trans-unit>
 
-            <!-- Redirects->listNotFound -->
+            <!--Redirects->listNotFound-->
             <trans-unit id="backendModule.redirects.listNotFound.title" xml:space="preserve">
                 <source>"Not Found" redirects</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.description" xml:space="preserve">
                 <source>Lists all "404 Not Found"-requests. With the help of this list, e.g. broken or missing redirects can be fixed by creating new redirects.</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.status" xml:space="preserve">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.status.isResolved" xml:space="preserve">
+                <source>Resolved</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.status.isResolvedButHasReappeared" xml:space="preserve">
+                <source>Reappeared</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.status.isNew" xml:space="preserve">
+                <source>New</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.status.hasNewHits" xml:space="preserve">
+                <source>New hits</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.statusLong.isResolved" xml:space="preserve">
+                <source>Is marked as resolved</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.statusLong.isResolvedButHasReappeared" xml:space="preserve">
+                <source>Was marked as resolved, but has reappeared again</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.statusLong.isNew" xml:space="preserve">
+                <source>Is new</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.statusLong.hasNewHits" xml:space="preserve">
+                <source>Has new hits</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.url" xml:space="preserve">
+                <source>URL</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.hitCount" xml:space="preserve">
+                <source>Hit count</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.isResolved" xml:space="preserve">
+                <source>Is resolved</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.hasReappearedCount" xml:space="preserve">
+                <source>Has-reappeared count</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions" xml:space="preserve">
+                <source>Actions</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions.edit" xml:space="preserve">
+                <source>Edit log entry</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions.delete" xml:space="preserve">
+                <source>Delete log entry</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions.createRedirect" xml:space="preserve">
+                <source>Create redirect with TYPO3 core redirects extension</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions.resolve" xml:space="preserve">
+                <source>Mark as resolved</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions.unresolve" xml:space="preserve">
+                <source>Mark as not resolved</source>
             </trans-unit>
         </body>
     </file>

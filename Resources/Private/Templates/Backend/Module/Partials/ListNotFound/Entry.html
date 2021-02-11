@@ -1,0 +1,113 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:b="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    xmlns:c="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+    xmlns:u="http://typo3.org/ns/Typoheads/Utilities/ViewHelper"
+    data-namespace-typo3-fluid="true"
+>
+
+
+
+<tr>
+    <td>
+        <f:switch expression="{entry.status}">
+            <f:case value="isResolved">
+                <div
+                    class="status is-resolved"
+                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.statusLong.isResolved', extension: 'redirect_manager')}"
+                >
+                    <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status.isResolved"/>
+                </div>
+            </f:case>
+            <f:case value="isResolvedButHasReappeared">
+                <div
+                    class="status is-resolved-but-has-reappeared"
+                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.statusLong.isResolvedButHasReappeared', extension: 'redirect_manager')}"
+                >
+                    <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status.isResolvedButHasReappeared"/>
+                </div>
+            </f:case>
+            <f:case value="isNew">
+                <div
+                    class="status is-new"
+                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.statusLong.isNew', extension: 'redirect_manager')}"
+                >
+                    <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status.isNew"/>
+                </div>
+            </f:case>
+            <f:case value="hasNewHits">
+                <div
+                    class="status has-new-hits"
+                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.statusLong.hasNewHits', extension: 'redirect_manager')}"
+                >
+                    <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status.hasNewHits"/>
+                </div>
+            </f:case>
+        </f:switch>
+    </td>
+    <td>
+        <a href="{entry.url}" target="_blank">
+            {entry.url}
+        </a>
+    </td>
+    <td>
+        {entry.hitCount}
+    </td>
+    <td>
+        {entry.hasReappearedCount}
+    </td>
+    <td>
+        <b:link.editRecord
+            uid="{entry.uid}"
+            table="tx_redirectmanager_not_found_log"
+            class="btn btn-default"
+            title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.edit', extension: 'redirect_manager')}"
+        >
+            <c:icon identifier="actions-open"/>
+        </b:link.editRecord>
+
+        <f:link.action
+            action="deleteNotFoundLog"
+            arguments="{entry: entry}"
+            class="btn btn-default"
+            title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.delete', extension: 'redirect_manager')}"
+        >
+            <c:icon identifier="actions-delete"/>
+        </f:link.action>
+
+        <f:if condition="{entry.status} == 'isResolved'">
+            <f:then>
+                <f:link.action
+                    action="unresolveNotFoundLog"
+                    arguments="{entry: entry}"
+                    class="btn btn-default"
+                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.unresolve', extension: 'redirect_manager')}"
+                >
+                    <c:icon identifier="actions-close"/>
+                </f:link.action>
+            </f:then>
+            <f:else>
+                <f:link.action
+                    action="resolveNotFoundLog"
+                    arguments="{entry: entry}"
+                    class="btn btn-default"
+                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.resolve', extension: 'redirect_manager')}"
+                >
+                    <c:icon identifier="actions-check"/>
+                </f:link.action>
+            </f:else>
+        </f:if>
+
+        <b:link.newRecord
+            table="sys_redirect"
+            class="btn btn-default"
+            title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.createRedirect', extension: 'redirect_manager')}"
+            onclick="this.href = this.href + '&source_path=' + '{entry.url}'"
+        >
+            <c:icon identifier="mimetypes-x-sys_redirect"/>
+        </b:link.newRecord>
+    </td>
+</tr>
+
+
+</html>

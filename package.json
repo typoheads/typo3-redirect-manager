@@ -1,0 +1,19 @@
+{
+    "name": "typo3-redirect-manager",
+    "version": "1.0.0",
+    "description": "Development tools for typo3-redirect-manager.",
+    "author": "Philipp Seiler",
+    "license": "MIT",
+    "devDependencies": {
+        "node-sass": "^5.0.0",
+        "grunt": "^1.3.0",
+        "grunt-sass": "^3.1.0",
+        "grunt-contrib-cssmin": "^3.0.0",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-regex-replace": "^0.4.0"
+    },
+    "scripts": {
+        "build": "node_modules/grunt/bin/grunt",
+        "watch": "node_modules/grunt/bin/grunt watch"
+    }
+}

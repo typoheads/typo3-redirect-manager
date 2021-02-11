@@ -1,6 +1,5 @@
 <html
     xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-    xmlns:b="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
     xmlns:u="http://typo3.org/ns/Typoheads/Utilities/ViewHelper"
     data-namespace-typo3-fluid="true"
 >
@@ -18,7 +17,34 @@
 
 <f:section name="Main">
     <div data-action="listNotFound">
-        listNotFound
+        <div class="table-responsive">
+            <table class="table table-striped table-hover mb-0">
+                <thead>
+                <tr>
+                    <th>
+                        <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status"/>
+                    </th>
+                    <th>
+                        <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.url"/>
+                    </th>
+                    <th title="{u:translate.backend(key: 'tx_redirectmanager_not_found_log.hit_count', extension: 'redirect_manager')}">
+                        <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.hitCount"/>
+                    </th>
+                    <th title="{u:translate.backend(key: 'tx_redirectmanager_not_found_log.has_reappeared_count', extension: 'redirect_manager')}">
+                        <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.hasReappearedCount"/>
+                    </th>
+                    <th>
+                        <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.actions"/>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <f:for each="{entries}" as="entry">
+                    <f:render partial="ListNotFound/Entry" arguments="{entry: entry}"/>
+                </f:for>
+                </tbody>
+            </table>
+        </div>
     </div>
 </f:section>
 
