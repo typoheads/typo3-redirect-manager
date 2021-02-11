@@ -9,45 +9,45 @@
 
 
 <tr>
-    <td>
+    <td class="status">
         <f:switch expression="{entry.status}">
             <f:case value="isResolved">
-                <div class="status is-resolved">
+                <span class="is-resolved">
                     <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status.isResolved"/>
-                </div>
+                </span>
             </f:case>
             <f:case value="isResolvedButHasReappeared">
-                <div class="status is-resolved-but-has-reappeared">
+                <span class="is-resolved-but-has-reappeared">
                     <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status.isResolvedButHasReappeared"/>
-                </div>
+                </span>
             </f:case>
             <f:case value="isNew">
-                <div class="status is-new">
+                <span class="is-new">
                     <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status.isNew"/>
-                </div>
+                </span>
             </f:case>
             <f:case value="hasNewHits">
-                <div class="status has-new-hits">
+                <span class="has-new-hits">
                     <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.table.status.hasNewHits"/>
-                </div>
+                </span>
             </f:case>
         </f:switch>
     </td>
-    <td>
-        <a href="{entry.url}" target="_blank">
-            {entry.url}
+    <td class="url">
+        <a href="{entry.url}" target="_blank" title="{entry.url}">
+            <f:format.crop maxCharacters="200">{entry.url}</f:format.crop>
         </a>
     </td>
-    <td>
+    <td class="hit-count">
         {entry.hitCount}
     </td>
-    <td>
+    <td class="has-reappeared-count">
         {entry.hasReappearedCount}
     </td>
-    <td>
+    <td class="crdate">
         <f:format.date date="{entry.crdate}" format="d.m.Y, H:i"/>
     </td>
-    <td>
+    <td class="actions">
         <f:spaceless>
             <b:link.editRecord
                 uid="{entry.uid}"
