@@ -15,7 +15,7 @@ if (!defined('TYPO3_MODE')) {
     ],
     [
         'access' => 'admin',
-        'icon' => 'EXT:redirect_manager/Resources/Public/Icons/Backend/Module/redirects.svg',
+        'icon' => 'EXT:redirect_manager/Resources/Public/Icons/Backend/Module/404.svg',
         'labels' => 'LLL:EXT:redirect_manager/Resources/Private/Language/locallang_module_redirects.xlf'
     ]
 );
