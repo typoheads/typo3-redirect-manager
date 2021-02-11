@@ -95,6 +95,9 @@
     <li><strong>Actions:</strong> Functions to manage this 404-error.</li>
 </ul>]]></target>
             </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.noEntriesFound" xml:space="preserve">
+                <source>No "404 Not Found" log entries found.</source>
+            </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.status" xml:space="preserve">
                 <source>Status</source>
             </trans-unit>
@@ -117,7 +120,10 @@
                 <source>Hit count</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.hasReappearedCount" xml:space="preserve">
-                <source>Has-reappeared count</source>
+                <source>Has-reappeared<![CDATA[<br>]]>count</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.crdate" xml:space="preserve">
+                <source>Appeared at</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.actions" xml:space="preserve">
                 <source>Actions</source>

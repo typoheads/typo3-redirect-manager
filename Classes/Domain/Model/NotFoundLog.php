@@ -12,6 +12,13 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class NotFoundLog extends AbstractEntity
 {
     /**
+     * Creation time.
+     *
+     * @var \DateTime
+     */
+    protected $crdate;
+
+    /**
      * Hashed URL.
      *
      * @var string
@@ -45,6 +52,32 @@ class NotFoundLog extends AbstractEntity
      * @var int
      */
     protected $hasReappearedCount = 0;
+
+
+
+    /**
+     * Gets the creation time.
+     *
+     * @return \DateTime|null
+     */
+    public function getCrdate(): ?\DateTime
+    {
+        return $this->crdate;
+    }
+
+
+
+    /**
+     * Sets the creation time.
+     *
+     * @param \DateTime $crdate New creation time
+     *
+     * @return void
+     */
+    public function setCrdate(\DateTime $crdate): void
+    {
+        $this->crdate = $crdate;
+    }
 
 
 

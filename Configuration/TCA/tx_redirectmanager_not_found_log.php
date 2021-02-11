@@ -21,6 +21,12 @@ return [
         ]
     ],
     'columns' => [
+        'crdate' => [
+            'label' => 'tstamp',
+            'config' => [
+                'type' => 'passthrough'
+            ]
+        ],
         'url' => [
             'label' => 'LLL:EXT:redirect_manager/Resources/Private/Language/Backend/Backend.xlf:tx_redirectmanager_not_found_log.url',
             'config' => [

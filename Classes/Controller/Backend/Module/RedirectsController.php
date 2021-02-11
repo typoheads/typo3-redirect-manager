@@ -25,7 +25,7 @@ class RedirectsController extends ActionController
     /**
      * RedirectsController constructor.
      *
-     * @param \Typoheads\RedirectManager\Controller\Backend\Module\NotFoundLogRepository $notFoundLogRepository Repository for "404 Not Found" log entries.
+     * @param \Typoheads\RedirectManager\Domain\Repository\NotFoundLogRepository $notFoundLogRepository Repository for "404 Not Found" log entries.
      */
     public function __construct(NotFoundLogRepository $notFoundLogRepository)
     {

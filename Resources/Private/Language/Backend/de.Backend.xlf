@@ -67,6 +67,9 @@
     <li><strong>Aktionen:</strong> Funktionen zur Verwaltung dieser 404-Anfrage.</li>
 </ul>]]></target>
             </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.noEntriesFound" xml:space="preserve">
+                <target>Keine "404 Nicht gefunden" Log-Einträge gefunden.</target>
+            </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.status" xml:space="preserve">
                 <target>Status</target>
             </trans-unit>
@@ -89,7 +92,10 @@
                 <target>Anzahl aufgerufen</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.hasReappearedCount" xml:space="preserve">
-                <target>Anzahl wieder aufgetaucht</target>
+                <target>Anzahl wieder<![CDATA[<br>]]>aufgetaucht</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.crdate" xml:space="preserve">
+                <target>Aufgetaucht am</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.actions" xml:space="preserve">
                 <target>Aktionen</target>

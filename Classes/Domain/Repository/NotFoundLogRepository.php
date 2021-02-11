@@ -4,6 +4,7 @@ namespace Typoheads\RedirectManager\Domain\Repository;
 
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use Typoheads\Utilities\Domain\Repository\Repository;
 
 /**
@@ -30,5 +31,10 @@ class NotFoundLogRepository extends Repository
         } else {
             $this->getDefaultQuerySettings()->setStoragePageIds([0]);
         }
+
+        $this->setDefaultOrderings([
+            'hit_count' => QueryInterface::ORDER_DESCENDING,
+            'crdate' => QueryInterface::ORDER_DESCENDING
+        ]);
     }
 }
