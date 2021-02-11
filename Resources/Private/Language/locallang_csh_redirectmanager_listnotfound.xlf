@@ -4,10 +4,10 @@
         <header/>
         <body>
             <trans-unit id=".alttitle" resname=".alttitle">
-                <source>404 Not Found requests</source>
+                <source>404 Management</source>
             </trans-unit>
             <trans-unit id=".description" resname=".description">
-                <source>Lists 404 Not Found requests. Can be used to reduce the amount of broken links or invalid URLs by e.g. creating redirects for them.
+                <source>Lists "404 Not Found" requests. Can be used to reduce the amount of broken links or invalid URLs by e.g. creating redirects for them.
                     Click on this message for more detailed information.
                 </source>
             </trans-unit>

@@ -4,10 +4,10 @@
         <header/>
         <body>
             <trans-unit id=".alttitle" resname=".alttitle">
-                <target>404 Not Found Anfragen</target>
+                <target>404 Management</target>
             </trans-unit>
             <trans-unit id=".description" resname=".description">
-                <target>Zeigt alle 404 Not Found Anfragen in einer Liste an. Kann verwendet werden, um kaputte oder inkorrekte Links zu korrigieren und z.B.
+                <target>Zeigt "404 Not Found" Anfragen in einer Liste an. Kann verwendet werden, um kaputte oder inkorrekte Links zu korrigieren und z.B.
                     Weiterleitungen dafür zu erstellen. Auf dieses Nachricht klicken, um detailierte Informationen anzuzeigen.
                 </target>
             </trans-unit>

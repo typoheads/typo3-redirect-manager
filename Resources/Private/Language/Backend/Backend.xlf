@@ -40,7 +40,7 @@
             -->
             <!--Redirects-->
             <trans-unit id="tx_redirectmanager_not_found_log.listTitle" xml:space="preserve">
-                <source>404 Not Found log entry</source>
+                <source>"404 Not Found" log entry</source>
             </trans-unit>
             <trans-unit id="tx_redirectmanager_not_found_log.url" xml:space="preserve">
                 <source>URL</source>
@@ -71,13 +71,13 @@
 
             <!--Redirects->listNotFound-->
             <trans-unit id="backendModule.redirects.listNotFound.title" xml:space="preserve">
-                <source>404 Not Found requests</source>
+                <source>404 Management</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.description" xml:space="preserve">
-                <source>Lists all 404 Not Found requests. With the help of this list, e.g. broken or missing redirects can be fixed by creating new redirects.</source>
+                <source>Lists "404 Not Found" requests. With the help of this list, e.g. broken or missing redirects can be fixed by creating new redirects.</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.noEntriesFound" xml:space="preserve">
-                <source>No 404 Not Found requests found.</source>
+                <source>No "404 Not Found" requests found.</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.status" xml:space="preserve">
                 <source>Status</source>
