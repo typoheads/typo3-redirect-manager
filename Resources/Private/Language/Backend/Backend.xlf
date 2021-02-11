@@ -92,7 +92,7 @@
                 <source>New</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.status.hasNewHits" xml:space="preserve">
-                <source>New hits</source>
+                <source>Known</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.url" xml:space="preserve">
                 <source>URL</source>
