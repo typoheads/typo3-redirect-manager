@@ -1,0 +1,9 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+  Typoheads\RedirectManager\:
+    resource: '../Classes/*'
+  Typoheads\RedirectManager\Controller\Backend\Module\RedirectsController:
+    public: true
