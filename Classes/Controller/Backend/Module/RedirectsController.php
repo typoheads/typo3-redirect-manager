@@ -55,9 +55,11 @@ class RedirectsController extends ActionController
         /** @var \TYPO3\CMS\Backend\View\BackendTemplateView $view */
         parent::initializeView($view);
 
-        $view->getModuleTemplate()->getPageRenderer()->addCssFile('EXT:redirect_manager/Resources/Public/Css/Backend/backend.min.css');
-
-        $this->registerDocheaderButtons($view);
+        // Adjust backend template for view that provide UIs to the user
+        if (in_array($this->actionMethodName, ['indexAction', 'listNotFoundAction'])) {
+            $view->getModuleTemplate()->getPageRenderer()->addCssFile('EXT:redirect_manager/Resources/Public/Css/Backend/backend.min.css');
+            $this->registerDocheaderButtons($view);
+        }
     }
 
 
