@@ -35,24 +35,24 @@
                     <table class="table table-striped table-hover mb-0">
                         <thead>
                         <tr>
-                            <th>
+                            <th class="status">
                                 {u:translate.backend(key: 'backendModule.redirects.listNotFound.table.status', extension: 'redirect_manager') -> f:format.raw()}
                             </th>
-                            <th>
+                            <th class="url">
                                 {u:translate.backend(key: 'backendModule.redirects.listNotFound.table.url', extension: 'redirect_manager') -> f:format.raw()}
                             </th>
-                            <th>
+                            <th class="hit-count">
                                 {u:translate.backend(key: 'backendModule.redirects.listNotFound.table.hitCount', extension: 'redirect_manager') ->
                                 f:format.raw()}
                             </th>
-                            <th>
+                            <th class="has-reappeared-count">
                                 {u:translate.backend(key: 'backendModule.redirects.listNotFound.table.hasReappearedCount', extension: 'redirect_manager') ->
                                 f:format.raw()}
                             </th>
-                            <th>
+                            <th class="crdate">
                                 {u:translate.backend(key: 'backendModule.redirects.listNotFound.table.crdate', extension: 'redirect_manager') -> f:format.raw()}
                             </th>
-                            <th>
+                            <th class="actions">
                                 {u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions', extension: 'redirect_manager') ->
                                 f:format.raw()}
                             </th>

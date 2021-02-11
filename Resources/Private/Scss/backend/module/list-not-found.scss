@@ -1,30 +1,58 @@
 [data-module="redirects"] [data-action="listNotFound"] {
-    .status {
-        width: 100%;
-        padding: 0.25rem 0.5rem;
-
-        font-family: monospace;
-        font-weight: bold;
-        text-align: center;
-
-        &.is-resolved {
-            background-color: #00cc66;
-            color: white;
+    th {
+        &.status {
+            width: 150px;
         }
 
-        &.is-resolved-but-has-reappeared {
-            background-color: #f1ea22;
-            color: black;
+        &.url {
+            word-break: break-all;
         }
 
-        &.is-new {
-            background-color: #58a1ff;
-            color: white;
+        &.hit-count {
+            width: 105px;
         }
 
-        &.has-new-hits {
-            background-color: #00479f;
-            color: white;
+        &.has-reappeared-count {
+            width: 105px;
+        }
+
+        &.crdate {
+            width: 140px;
+        }
+
+        &.actions {
+            width: 140px;
+        }
+    }
+
+    td {
+        .status {
+            width: 100%;
+            padding: 0.25rem 0.5rem;
+
+            font-family: monospace;
+            font-weight: bold;
+            text-align: center;
+
+            &.is-resolved {
+                background-color: #00cc66;
+                color: white;
+            }
+
+            &.is-resolved-but-has-reappeared {
+                background-color: #f1ea22;
+                color: black;
+            }
+
+            &.is-new {
+                background-color: #58a1ff;
+                color: white;
+            }
+
+            &.has-new-hits {
+                background-color: #00479f;
+                color: white;
+            }
         }
     }
 }

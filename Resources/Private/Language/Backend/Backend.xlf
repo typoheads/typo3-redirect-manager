@@ -98,7 +98,7 @@
                 <source>URL</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.hitCount" xml:space="preserve">
-                <source>Hit count</source>
+                <source>Hit<![CDATA[<br>]]>count</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.hasReappearedCount" xml:space="preserve">
                 <source>Has-reappeared<![CDATA[<br>]]>count</source>

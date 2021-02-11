@@ -1,4 +1,28 @@
-[data-module="redirects"] [data-action="listNotFound"] .status {
+[data-module="redirects"] [data-action="listNotFound"] th.status {
+    width: 150px;
+}
+
+[data-module="redirects"] [data-action="listNotFound"] th.url {
+    word-break: break-all;
+}
+
+[data-module="redirects"] [data-action="listNotFound"] th.hit-count {
+    width: 105px;
+}
+
+[data-module="redirects"] [data-action="listNotFound"] th.has-reappeared-count {
+    width: 105px;
+}
+
+[data-module="redirects"] [data-action="listNotFound"] th.crdate {
+    width: 140px;
+}
+
+[data-module="redirects"] [data-action="listNotFound"] th.actions {
+    width: 140px;
+}
+
+[data-module="redirects"] [data-action="listNotFound"] td .status {
     width: 100%;
     padding: 0.25rem 0.5rem;
     font-family: monospace;
@@ -6,22 +30,22 @@
     text-align: center;
 }
 
-[data-module="redirects"] [data-action="listNotFound"] .status.is-resolved {
+[data-module="redirects"] [data-action="listNotFound"] td .status.is-resolved {
     background-color: #00cc66;
     color: white;
 }
 
-[data-module="redirects"] [data-action="listNotFound"] .status.is-resolved-but-has-reappeared {
+[data-module="redirects"] [data-action="listNotFound"] td .status.is-resolved-but-has-reappeared {
     background-color: #f1ea22;
     color: black;
 }
 
-[data-module="redirects"] [data-action="listNotFound"] .status.is-new {
+[data-module="redirects"] [data-action="listNotFound"] td .status.is-new {
     background-color: #58a1ff;
     color: white;
 }
 
-[data-module="redirects"] [data-action="listNotFound"] .status.has-new-hits {
+[data-module="redirects"] [data-action="listNotFound"] td .status.has-new-hits {
     background-color: #00479f;
     color: white;
 }

@@ -70,7 +70,7 @@
                 <target>URL</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.hitCount" xml:space="preserve">
-                <target>Anzahl aufgerufen</target>
+                <target>Anzahl<![CDATA[<br>]]>aufgerufen</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.hasReappearedCount" xml:space="preserve">
                 <target>Anzahl wieder<![CDATA[<br>]]>aufgetaucht</target>
