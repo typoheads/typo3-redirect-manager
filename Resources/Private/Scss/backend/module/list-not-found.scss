@@ -1,4 +1,8 @@
 [data-module="redirects"] [data-action="listNotFound"] {
+    table {
+        table-layout: fixed;
+    }
+
     th {
         &.status {
             width: 150px;
