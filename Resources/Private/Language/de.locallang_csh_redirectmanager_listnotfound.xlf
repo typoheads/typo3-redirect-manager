@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2021-02-10T09:00:00Z" product-name="redirect_manager">
+        <header/>
+        <body>
+            <trans-unit id=".alttitle" resname=".alttitle">
+                <target>404 Not Found Anfragen</target>
+            </trans-unit>
+            <trans-unit id=".description" resname=".description">
+                <target>Zeigt alle 404 Not Found Anfragen in einer Liste an. Kann verwendet werden, um kaputte oder inkorrekte Links zu korrigieren und z.B.
+                    Weiterleitungen dafür zu erstellen. Auf dieses Nachricht klicken, um detailierte Informationen anzuzeigen.
+                </target>
+            </trans-unit>
+            <trans-unit id=".syntax" resname=".syntax">
+                <target><![CDATA[<ul>
+    <li><strong>Status:</strong> Zeigt auf einen Überblick an, wie der aktuelle Status dieser 404-Anfrage ist.
+        <ul>
+            <li><em>Neu:</em> Dieser 404-Fehler ist zum ersten Mal aufgetaucht, d.h. die damit verbundene URL wurde bisher einmal aufgerufen.</li>
+            <li><em>Neue Aufrufe:</em> Dieser 404-Fehler ist bereits mehrere Male aufgetaucht.</li>
+            <li><em>Behoben:</em> Dieser 404-Fehler wurde als behoben markiert und ist seit dem auch nie wieder aufgetaucht.</li>
+            <li><em>Wiederaufgetaucht:</em> Dieser 404-Fehler wurde als behoben markiert, ist seit dem allerdings erneut aufgetaucht. Siehe auch "Anzahl wieder aufgetaucht".</li>
+        </ul>
+    </li>
+    <li><strong>URL:</strong> Die URL, die zu diesem 404-Fehler geführt hat.</li>
+    <li><strong>Anzahl aufgerufen:</strong> Zählt, wie oft dieser 404-Fehler aufgerufen wurde. Jeder Aufruf erhöht diesen Zähler.</li>
+    <li><strong>Anzahl wieder aufgetaucht:</strong> Dieser Zähler wird erhöht, wenn ein 404-Fehler als "behoben" markiert wurde, danach aber erneut aufgerufen wurde. Dies kann darauf hindeuten, dass ein zuvor behobener 404-Fehler, doch noch an anderer Stelle aufgerufen wird.</li>
+    <li><strong>Aktionen:</strong> Funktionen zur Verwaltung dieser 404-Anfrage.</li>
+</ul>]]></target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -2,7 +2,9 @@
 
 namespace Typoheads\RedirectManager\Controller\Backend\Module;
 
+use TYPO3\CMS\Backend\View\BackendTemplateView;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
 use Typoheads\RedirectManager\Domain\Model\NotFoundLog;
 use Typoheads\RedirectManager\Domain\Repository\NotFoundLogRepository;
 
@@ -13,6 +15,13 @@ use Typoheads\RedirectManager\Domain\Repository\NotFoundLogRepository;
  */
 class RedirectsController extends ActionController
 {
+    /**
+     * Backend template container.
+     *
+     * @var string
+     */
+    protected $defaultViewObjectName = BackendTemplateView::class;
+
     /**
      * Repository for "404 Not Found" log entries.
      *
@@ -30,6 +39,45 @@ class RedirectsController extends ActionController
     public function __construct(NotFoundLogRepository $notFoundLogRepository)
     {
         $this->notFoundLogRepository = $notFoundLogRepository;
+    }
+
+
+
+    /**
+     * Setup backend template.
+     *
+     * @param ViewInterface $view
+     *
+     * @return void
+     */
+    protected function initializeView(ViewInterface $view)
+    {
+        /** @var \TYPO3\CMS\Backend\View\BackendTemplateView $view */
+        parent::initializeView($view);
+
+        $view->getModuleTemplate()->getPageRenderer()->addCssFile('EXT:redirect_manager/Resources/Public/Css/Backend/backend.min.css');
+
+        $this->registerDocheaderButtons($view);
+    }
+
+
+
+    /**
+     * Registers buttons for the docheader-section of the backend module.
+     *
+     * @param \TYPO3\CMS\Backend\View\BackendTemplateView $view
+     *
+     * @return void
+     */
+    private function registerDocheaderButtons(BackendTemplateView $view): void
+    {
+        $buttonBar = $view->getModuleTemplate()->getDocHeaderComponent()->getButtonBar();
+
+        $helpButton = $buttonBar->makeHelpButton()
+            ->setModuleName('_MOD_site_redirectmanager_listnotfound')
+            ->setFieldName('');
+
+        $buttonBar->addButton($helpButton);
     }
 
 

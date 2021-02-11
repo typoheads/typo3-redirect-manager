@@ -9,7 +9,7 @@
             -->
             <!--Redirects-->
             <trans-unit id="tx_redirectmanager_not_found_log.listTitle" xml:space="preserve">
-                <target>"404 Not Found" Log-Eintrag</target>
+                <target>404 Not Found Log Eintrag</target>
             </trans-unit>
             <trans-unit id="tx_redirectmanager_not_found_log.url" xml:space="preserve">
                 <target>URL</target>
@@ -43,32 +43,13 @@
 
             <!--Redirects->listNotFound-->
             <trans-unit id="backendModule.redirects.listNotFound.title" xml:space="preserve">
-                <target>"404 Nicht gefunden" Anfragen</target>
+                <target>404 Not Found Anfragen</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.description" xml:space="preserve">
-                <target>Zeigt alle "404 Nicht gefunden"-Anfrage an. Mit Hilfe dieser Liste können zum Beispiel kaputte oder verloren gegangene Links korrigiert werden.</target>
-            </trans-unit>
-            <trans-unit id="backendModule.redirects.listNotFound.legend" xml:space="preserve">
-                <target>Legende</target>
-            </trans-unit>
-            <trans-unit id="backendModule.redirects.listNotFound.legend.description" xml:space="preserve">
-                <target><![CDATA[<ul>
-    <li><strong>Status:</strong> Zeigt auf einen Überblick an, wie der aktuelle Status dieser 404-Anfrage ist.
-        <ul>
-            <li><em>Neu:</em> Dieser 404-Fehler ist zum ersten Mal aufgetaucht, d.h. die damit verbundene URL wurde bisher einmal aufgerufen.</li>
-            <li><em>Neue Aufrufe:</em> Dieser 404-Fehler ist bereits mehrere Male aufgetaucht.</li>
-            <li><em>Behoben:</em> Dieser 404-Fehler wurde als behoben markiert und ist seit dem auch nie wieder aufgetaucht.</li>
-            <li><em>Wiederaufgetaucht:</em> Dieser 404-Fehler wurde als behoben markiert, ist seit dem allerdings erneut aufgetaucht. Siehe auch "Anzahl wieder aufgetaucht".</li>
-        </ul>
-    </li>
-    <li><strong>URL:</strong> Die URL, die zu diesem 404-Fehler geführt hat.</li>
-    <li><strong>Anzahl aufgerufen:</strong> Zählt, wie oft dieser 404-Fehler aufgerufen wurde. Jeder Aufruf erhöht diesen Zähler.</li>
-    <li><strong>Anzahl wieder aufgetaucht:</strong> Dieser Zähler wird erhöht, wenn ein 404-Fehler als "behoben" markiert wurde, danach aber erneut aufgerufen wurde. Dies kann darauf hindeuten, dass ein zuvor behobener 404-Fehler, doch noch an anderer Stelle aufgerufen wird.</li>
-    <li><strong>Aktionen:</strong> Funktionen zur Verwaltung dieser 404-Anfrage.</li>
-</ul>]]></target>
+                <target>Zeigt alle 404 Not Found Anfragen an. Mit Hilfe dieser Liste können zum Beispiel kaputte oder verloren gegangene Links korrigiert werden.</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.noEntriesFound" xml:space="preserve">
-                <target>Keine "404 Nicht gefunden" Log-Einträge gefunden.</target>
+                <target>Keine 404 Not Found Anfragen gefunden.</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.status" xml:space="preserve">
                 <target>Status</target>

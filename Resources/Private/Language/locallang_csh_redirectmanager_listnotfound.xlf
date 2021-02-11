@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2021-02-10T09:00:00Z" product-name="redirect_manager">
+        <header/>
+        <body>
+            <trans-unit id=".alttitle" resname=".alttitle">
+                <source>404 Not Found requests</source>
+            </trans-unit>
+            <trans-unit id=".description" resname=".description">
+                <source>Lists 404 Not Found requests. Can be used to reduce the amount of broken links or invalid URLs by e.g. creating redirects for them.
+                    Click on this message for more detailed information.
+                </source>
+            </trans-unit>
+            <trans-unit id=".syntax" resname=".syntax">
+                <source><![CDATA[<ul>
+    <li><strong>Status:</strong> Shows at a glance, what the current state of the 404-error is.
+        <ul>
+            <li><em>New:</em> This 404-error has appeared for the first time. This means, that the corresponding URL was only called once.</li>
+            <li><em>New hits:</em> This 404-error has appeared multiple times.</li>
+            <li><em>Resolved :</em> This 404-error is marked as "resolved" and has never reappeared since them.</li>
+            <li><em>Reappeared:</em> This 404-error was marked as "resolved", but has reappeared since then again. Also check "Has-reappeared count".</li>
+        </ul>
+    </li>
+    <li><strong>URL:</strong> The URL that lead to this 404-error.</li>
+    <li><strong>Hit count:</strong> Counts how often this 404-error has appeared. Every request to this URL increases this counter.</li>
+    <li><strong>Has-reappeared count:</strong> This counter will be increased, when a previously "resolved" 404-error has reappeared again afterwards. This can point to some ongoing problem with the URL even after it was marked as "resolved".</li>
+    <li><strong>Actions:</strong> Functions to manage this 404-error.</li>
+</ul>]]></source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

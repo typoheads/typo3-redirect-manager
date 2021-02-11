@@ -19,3 +19,9 @@ if (!defined('TYPO3_MODE')) {
         'labels' => 'LLL:EXT:redirect_manager/Resources/Private/Language/locallang_module_redirects.xlf'
     ]
 );
+
+// Add context sensitive help (CSH) to the backend module
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr(
+    '_MOD_site_redirectmanager_listnotfound',
+    'EXT:redirect_manager/Resources/Private/Language/locallang_csh_redirectmanager_listnotfound.xlf'
+);
