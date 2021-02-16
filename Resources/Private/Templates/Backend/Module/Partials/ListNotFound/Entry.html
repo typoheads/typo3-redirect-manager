@@ -6,8 +6,6 @@
     data-namespace-typo3-fluid="true"
 >
 
-
-
 <tr>
     <td class="status">
         <f:switch expression="{entry.status}">
@@ -47,6 +45,7 @@
     <td class="crdate">
         <f:format.date date="{entry.crdate}" format="d.m.Y, H:i"/>
     </td>
+
     <td class="actions">
         <f:spaceless>
             <div class="btn-group">
@@ -103,7 +102,7 @@
                     table="sys_redirect"
                     class="btn btn-default"
                     title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.createRedirect', extension: 'redirect_manager')}"
-                    onclick="this.href = this.href + '&defVals[sys_redirect][source_path]=' + '{entry.url}'"
+                    onclick="var url = new window.URL('{entry.url}');this.href = this.href + '&defVals[sys_redirect][source_path]=' + url.pathname + '&defVals[sys_redirect][source_host]=' + url.hostname"
                 >
                     <c:icon identifier="mimetypes-x-sys_redirect"/>
                 </b:link.newRecord>

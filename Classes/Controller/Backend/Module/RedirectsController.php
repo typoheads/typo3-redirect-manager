@@ -3,6 +3,8 @@
 namespace Typoheads\RedirectManager\Controller\Backend\Module;
 
 use TYPO3\CMS\Backend\View\BackendTemplateView;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
 use Typoheads\RedirectManager\Domain\Model\NotFoundLog;
@@ -107,15 +109,17 @@ class RedirectsController extends ActionController
      */
     public function listNotFoundAction(): void
     {
+
         $demand = Demand::createFromRequest($this->request);
         $this->notFoundLogRepository->setDemand($demand);
-        $count = $this->notFoundLogRepository->countRedirectsByByDemand();
+
+        $count = $this->notFoundLogRepository->countRedirectsByDemand();
         $this->view->assignMultiple([
             'entries' => $this->notFoundLogRepository->findByDemand(),
             'pagination' => $this->preparePagination($demand, $count),
-            'demand' => $demand,
-            'sorting' => $_POST['sorting']
+            'demand' => $demand
         ]);
+        $GLOBALS['BE_USER']->setAndSaveSessionData('site_RedirectManagerRedirects', ['page' => $demand->getPage(), 'demand' => $demand->getParameters()]);
     }
 
     /**
@@ -153,7 +157,7 @@ class RedirectsController extends ActionController
 
 
     /**
-     * Delets a "404 Not Found" log entry.
+     * Deletes a "404 Not Found" log entry.
      *
      * @param \Typoheads\RedirectManager\Domain\Model\NotFoundLog $entry Entry to delete
      *
@@ -161,7 +165,9 @@ class RedirectsController extends ActionController
      */
     public function deleteNotFoundLogAction(NotFoundLog $entry): void
     {
+
         $this->notFoundLogRepository->remove($entry);
+
 
         // Use redirect instead of forward, otherwise cache will prevent the new list to be rendered with updated data
         $this->redirect('listNotFound');
@@ -206,6 +212,6 @@ class RedirectsController extends ActionController
         $this->notFoundLogRepository->update($entry);
 
         // Use redirect instead of forward, otherwise cache will prevent the new list to be rendered with updated data
-        $this->redirect('listNotFound');
+        $this->redirect('listNotFound', null, null);
     }
 }

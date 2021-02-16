@@ -50,9 +50,14 @@ class Demand
     protected $dateTo;
 
     /**
+     * @var string
+     */
+    protected $sorting;
+
+    /**
      * @var int
      */
-    protected $limit = 50;
+    protected $limit = 25;
 
     /**
      * @var int
@@ -62,18 +67,23 @@ class Demand
     /**
      * Demand constructor.
      * @param int $page
+     * @param int $limit
      * @param string $url
      * @param string $status
      * @param string $dateFrom
      * @param string $dateTo
+     * @param string $sorting
      */
-    public function __construct(int $page = 1, string $url = '', string $status = '', string $dateFrom = '', string $dateTo = '')
+    public function __construct(int $page = 1, int $limit = 25, string $url = '', string $status = '', string $dateFrom = '', string $dateTo = '', string $sorting = '')
     {
         $this->page = $page;
+        $this->limit = intval($limit) ?? 25;
         $this->url = $url;
         $this->status = $status;
         $this->dateFrom = $dateFrom;
         $this->dateTo = $dateTo;
+        $this->sorting = $sorting;
+
     }
 
     /**
@@ -90,18 +100,30 @@ class Demand
         /** @TODO Read arguments directly from get and post for now. Figure out how to access arguments in BE context */
         $arguments = array_merge($_GET, $_POST);
 
+        if(!$arguments['page'] && !$arguments['demand']) {
+            $argumentsFromSession = $GLOBALS['BE_USER']->getSessionData('site_RedirectManagerRedirects');
+            if($argumentsFromSession['page'] || $argumentsFromSession['demand']) {
+                $arguments = $argumentsFromSession;
+            }
+        }
+
+
         $page = (int)($arguments['page'] ?? 1);
         $demand = $arguments['demand'] ?? false;
+
+
 
         if (empty($demand)) {
             return new self($page);
         }
+        $limit = intval($demand['limit']) ?? 25;
         $url = $demand['url'] ?? '';
         $status = $demand['status'] ?? '';
         $dateFrom = $demand['dateFrom'] ?? '';
         $dateTo = $demand['dateTo'] ?? '';
+        $sorting = $demand['sorting'] ?? '';
 
-        return new self($page, $url, $status, $dateFrom, $dateTo);
+        return new self($page, $limit, $url, $status, $dateFrom, $dateTo, $sorting);
     }
 
     /**
@@ -169,6 +191,22 @@ class Demand
     }
 
     /**
+     * @return string
+     */
+    public function getSorting(): string
+    {
+        return $this->sorting;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasSorting(): bool
+    {
+        return $this->sorting !== '';
+    }
+
+    /**
      * @return bool
      */
     public function hasConstraints(): bool
@@ -194,7 +232,18 @@ class Demand
      */
     public function getLimit(): int
     {
+        if(!$this->limit) {
+            $this->limit = 25;
+        }
         return $this->limit;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasLimit(): bool
+    {
+        return $this->limit !== 25;
     }
 
     /**
@@ -224,6 +273,12 @@ class Demand
         }
         if ($this->hasDateTo()) {
             $parameters['dateTo'] = $this->getDateTo();
+        }
+        if ($this->hasSorting()) {
+            $parameters['sorting'] = $this->getSorting();
+        }
+        if ($this->hasLimit()) {
+            $parameters['limit'] = $this->getLimit();
         }
         return $parameters;
     }

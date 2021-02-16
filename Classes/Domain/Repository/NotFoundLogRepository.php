@@ -62,7 +62,7 @@ class NotFoundLogRepository extends Repository
     /**
      * @return int
      */
-    public function countRedirectsByByDemand(): int
+    public function countRedirectsByDemand(): int
     {
         return $this->getQueryForDemand()->execute()->count();
     }
@@ -89,14 +89,21 @@ class NotFoundLogRepository extends Repository
                     ]);
                     break;
                 case 'reappeared':
-                    $constraints[] = $query->greaterThan('has_reappeared_count', 0);
+                    $constraints[] = $query->logicalAnd([
+                        $query->equals('is_resolved', 1),
+                        $query->greaterThan('has_reappeared_count', 0)
+                    ]);
                     break;
                 case 'new':
-                    $constraints[] = $query->equals('hit_count', 1);
+                    $constraints[] = $query->logicalAnd([
+                        $query->equals('is_resolved', 0),
+                        $query->equals('hit_count', 1)
+                    ]);
                     break;
                 case 'new-hits':
                     $constraints[] = $query->logicalAnd([
                         $query->greaterThan('hit_count', 1),
+                        $query->equals('is_resolved', 0),
                         $query->equals('has_reappeared_count', 0)
                     ]);
 
@@ -115,8 +122,8 @@ class NotFoundLogRepository extends Repository
             $query->matching($query->logicalAnd($constraints));
         }
 
-        if($_POST['sorting']) {
-            switch($_POST['sorting']) {
+        if($this->demand->hasSorting()) {
+            switch($this->demand->getSorting()) {
                 case 'date-asc':
                     $query->setOrderings([
                         'crdate' => QueryInterface::ORDER_ASCENDING,

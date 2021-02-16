@@ -138,7 +138,13 @@
                 <source>To</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.filter.send" xml:space="preserve">
-                <source>Send</source>
+                <source>Filter items</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.filter.reset" xml:space="preserve">
+                <source>Reset filter</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.limit" xml:space="preserve">
+                <source>Items per page</source>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.sorting" xml:space="preserve">
                 <source>Sort by</source>

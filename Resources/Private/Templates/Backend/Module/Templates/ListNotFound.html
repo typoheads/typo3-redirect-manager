@@ -95,17 +95,31 @@
                 <div class="form-group">
                     <input type="submit" value="{u:translate.backend(key: 'backendModule.redirects.listNotFound.filter.send', extension: 'redirect_manager')}" class="btn btn-default btn-sm" />
                 </div>
+                <div class="form-group">
+                    <button id="reset-form" class="btn btn-outline-secondary btn-sm">
+                        {u:translate.backend(key: 'backendModule.redirects.listNotFound.filter.reset', extension: 'redirect_manager')}
+                    </button>
+                </div>
             </div>
             <div class="col end text-right">
-
                 <div class="form-group">
-                    <label for="sorting"><u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.sorting"/></label>
-                    <select id="sorting" class="form-control input-sm" name="sorting" >
+                    <label for="demand-limit"><u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.limit"/></label>
+                    <select id="demand-limit" class="demand-limit form-control input-sm" name="demand[limit]" data-on-change="reload">
+                        <option value="25">25</option>
+                        <f:form.select.option value="50" selected="50 === {demand.limit}">50</f:form.select.option>
+                        <f:form.select.option value="100" selected="100 === {demand.limit}">100</f:form.select.option>
+                        <f:form.select.option value="250" selected="250 === {demand.limit}">250</f:form.select.option>
+                        <f:form.select.option value="500" selected="500 === {demand.limit}">500</f:form.select.option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="demand-sorting"><u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.sorting"/></label>
+                    <select id="demand-sorting" class="demand-sorting form-control input-sm" name="demand[sorting]" data-on-change="reload">
                         <option value=""><u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.sorting.default"/></option>
-                        <f:form.select.option value="date-asc" selected="'date-asc' === {sorting}">
+                        <f:form.select.option value="date-asc" selected="'date-asc' === {demand.sorting}">
                             <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.sorting.dateAsc"/>
                         </f:form.select.option>
-                        <f:form.select.option value="date-desc" selected="'date-desc' === {sorting}">
+                        <f:form.select.option value="date-desc" selected="'date-desc' === {demand.sorting}">
                             <u:translate.backend extension="redirect_manager" key="backendModule.redirects.listNotFound.sorting.dateDesc"/>
                         </f:form.select.option>
                     </select>
@@ -146,7 +160,7 @@
             </thead>
             <tbody>
             <f:for each="{entries}" as="entry">
-                <f:render partial="ListNotFound/Entry" arguments="{entry: entry}"/>
+                <f:render partial="ListNotFound/Entry" arguments="{entry: entry, demand: demand}"/>
             </f:for>
             </tbody>
         </table>

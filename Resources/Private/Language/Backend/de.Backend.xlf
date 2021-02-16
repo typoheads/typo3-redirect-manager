@@ -110,7 +110,13 @@
                 <target>Bis</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.filter.send" xml:space="preserve">
-                <target>Senden</target>
+                <target>Einträge filtern</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.filter.reset" xml:space="preserve">
+                <target>Filter zurücksetzen</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.limit" xml:space="preserve">
+                <target>Einträge pro Seite</target>
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.sorting" xml:space="preserve">
                 <target>Sortierung</target>
