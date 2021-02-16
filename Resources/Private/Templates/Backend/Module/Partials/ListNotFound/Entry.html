@@ -103,7 +103,7 @@
                     table="sys_redirect"
                     class="btn btn-default"
                     title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.createRedirect', extension: 'redirect_manager')}"
-                    onclick="this.href = this.href + '&source_path=' + '{entry.url}'"
+                    onclick="this.href = this.href + '&defVals[sys_redirect][source_path]=' + '{entry.url}'"
                 >
                     <c:icon identifier="mimetypes-x-sys_redirect"/>
                 </b:link.newRecord>
