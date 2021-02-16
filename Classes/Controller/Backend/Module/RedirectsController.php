@@ -6,6 +6,7 @@ use TYPO3\CMS\Backend\View\BackendTemplateView;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Mvc\View\ViewInterface;
 use Typoheads\RedirectManager\Domain\Model\NotFoundLog;
+use Typoheads\RedirectManager\Domain\Repository\Demand;
 use Typoheads\RedirectManager\Domain\Repository\NotFoundLogRepository;
 
 /**
@@ -106,7 +107,47 @@ class RedirectsController extends ActionController
      */
     public function listNotFoundAction(): void
     {
-        $this->view->assign('entries', $this->notFoundLogRepository->findAll());
+        $demand = Demand::createFromRequest($this->request);
+        $this->notFoundLogRepository->setDemand($demand);
+        $count = $this->notFoundLogRepository->countRedirectsByByDemand();
+        $this->view->assignMultiple([
+            'entries' => $this->notFoundLogRepository->findByDemand(),
+            'pagination' => $this->preparePagination($demand, $count),
+            'demand' => $demand,
+            'sorting' => $_POST['sorting']
+        ]);
+    }
+
+    /**
+     * Prepares information for the pagination of the module
+     *
+     * @param Demand $demand
+     * @param int $count
+     * @return array
+     */
+    protected function preparePagination(Demand $demand, int $count): array
+    {
+        $numberOfPages = ceil($count / $demand->getLimit());
+        $endRecord = $demand->getOffset() + $demand->getLimit();
+        if ($endRecord > $count) {
+            $endRecord = $count;
+        }
+
+        $pagination = [
+            'current' => $demand->getPage(),
+            'numberOfPages' => $numberOfPages,
+            'hasLessPages' => $demand->getPage() > 1,
+            'hasMorePages' => $demand->getPage() < $numberOfPages,
+            'startRecord' => $demand->getOffset() + 1,
+            'endRecord' => $endRecord
+        ];
+        if ($pagination['current'] < $pagination['numberOfPages']) {
+            $pagination['nextPage'] = $pagination['current'] + 1;
+        }
+        if ($pagination['current'] > 1) {
+            $pagination['previousPage'] = $pagination['current'] - 1;
+        }
+        return $pagination;
     }
 
 

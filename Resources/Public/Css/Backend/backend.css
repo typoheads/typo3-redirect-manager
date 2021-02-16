@@ -1,56 +1,40 @@
 [data-module="redirects"] [data-action="listNotFound"] table {
-    table-layout: fixed;
-}
+  table-layout: fixed; }
 
 [data-module="redirects"] [data-action="listNotFound"] th.status {
-    width: 150px;
-}
+  width: 150px; }
 
 [data-module="redirects"] [data-action="listNotFound"] th.hit-count {
-    width: 105px;
-}
+  width: 105px; }
 
 [data-module="redirects"] [data-action="listNotFound"] th.has-reappeared-count {
-    width: 105px;
-}
+  width: 150px; }
 
 [data-module="redirects"] [data-action="listNotFound"] th.crdate {
-    width: 140px;
-}
+  width: 140px; }
 
 [data-module="redirects"] [data-action="listNotFound"] th.actions {
-    width: 140px;
-}
+  width: 170px; }
 
 [data-module="redirects"] [data-action="listNotFound"] td.status span {
-    display: block;
-    width: 100%;
-    padding: 0.25rem 0.5rem;
-    font-family: monospace;
-    font-weight: bold;
-    text-align: center;
-}
-
-[data-module="redirects"] [data-action="listNotFound"] td.status span.is-resolved {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  font-family: monospace;
+  font-weight: bold;
+  text-align: center; }
+  [data-module="redirects"] [data-action="listNotFound"] td.status span.is-resolved {
     background-color: #00cc66;
-    color: white;
-}
-
-[data-module="redirects"] [data-action="listNotFound"] td.status span.is-resolved-but-has-reappeared {
+    color: white; }
+  [data-module="redirects"] [data-action="listNotFound"] td.status span.is-resolved-but-has-reappeared {
     background-color: #f1ea22;
-    color: black;
-}
-
-[data-module="redirects"] [data-action="listNotFound"] td.status span.is-new {
+    color: black; }
+  [data-module="redirects"] [data-action="listNotFound"] td.status span.is-new {
     background-color: #58a1ff;
-    color: white;
-}
-
-[data-module="redirects"] [data-action="listNotFound"] td.status span.has-new-hits {
+    color: white; }
+  [data-module="redirects"] [data-action="listNotFound"] td.status span.has-new-hits {
     background-color: #00479f;
-    color: white;
-}
+    color: white; }
 
 [data-module="redirects"] [data-action="listNotFound"] td.url {
-    word-break: break-all;
-}
+  word-break: break-all; }

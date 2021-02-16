@@ -49,55 +49,65 @@
     </td>
     <td class="actions">
         <f:spaceless>
-            <b:link.editRecord
-                uid="{entry.uid}"
-                table="tx_redirectmanager_not_found_log"
-                class="btn btn-default"
-                title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.edit', extension: 'redirect_manager')}"
-            >
-                <c:icon identifier="actions-eye"/>
-            </b:link.editRecord>
+            <div class="btn-group">
+                <f:link.typolink
+                    parameter="{entry.url}"
+                    target="_blank"
+                    class="btn btn-default"
+                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.view', extension: 'redirect_manager')}"
+                >
+                    <c:icon identifier="actions-eye"/>
+                </f:link.typolink>
+                <b:link.editRecord
+                    uid="{entry.uid}"
+                    table="tx_redirectmanager_not_found_log"
+                    class="btn btn-default"
+                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.edit', extension: 'redirect_manager')}"
+                >
+                    <c:icon identifier="actions-open"/>
+                </b:link.editRecord>
 
-            <f:link.action
-                action="deleteNotFoundLog"
-                arguments="{entry: entry}"
-                class="btn btn-default"
-                title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.delete', extension: 'redirect_manager')}"
-            >
-                <c:icon identifier="actions-delete"/>
-            </f:link.action>
+                <f:link.action
+                    action="deleteNotFoundLog"
+                    arguments="{entry: entry}"
+                    class="btn btn-default"
+                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.delete', extension: 'redirect_manager')}"
+                >
+                    <c:icon identifier="actions-delete"/>
+                </f:link.action>
 
-            <f:if condition="{entry.status} == 'isResolved'">
-                <f:then>
-                    <f:link.action
-                        action="unresolveNotFoundLog"
-                        arguments="{entry: entry}"
-                        class="btn btn-default"
-                        title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.unresolve', extension: 'redirect_manager')}"
-                    >
-                        <c:icon identifier="actions-close"/>
-                    </f:link.action>
-                </f:then>
-                <f:else>
-                    <f:link.action
-                        action="resolveNotFoundLog"
-                        arguments="{entry: entry}"
-                        class="btn btn-default"
-                        title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.resolve', extension: 'redirect_manager')}"
-                    >
-                        <c:icon identifier="actions-check"/>
-                    </f:link.action>
-                </f:else>
-            </f:if>
+                <f:if condition="{entry.status} == 'isResolved'">
+                    <f:then>
+                        <f:link.action
+                            action="unresolveNotFoundLog"
+                            arguments="{entry: entry}"
+                            class="btn btn-default"
+                            title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.unresolve', extension: 'redirect_manager')}"
+                        >
+                            <c:icon identifier="actions-close"/>
+                        </f:link.action>
+                    </f:then>
+                    <f:else>
+                        <f:link.action
+                            action="resolveNotFoundLog"
+                            arguments="{entry: entry}"
+                            class="btn btn-default"
+                            title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.resolve', extension: 'redirect_manager')}"
+                        >
+                            <c:icon identifier="actions-check"/>
+                        </f:link.action>
+                    </f:else>
+                </f:if>
 
-            <b:link.newRecord
-                table="sys_redirect"
-                class="btn btn-default"
-                title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.createRedirect', extension: 'redirect_manager')}"
-                onclick="this.href = this.href + '&source_path=' + '{entry.url}'"
-            >
-                <c:icon identifier="mimetypes-x-sys_redirect"/>
-            </b:link.newRecord>
+                <b:link.newRecord
+                    table="sys_redirect"
+                    class="btn btn-default"
+                    title="{u:translate.backend(key: 'backendModule.redirects.listNotFound.table.actions.createRedirect', extension: 'redirect_manager')}"
+                    onclick="this.href = this.href + '&source_path=' + '{entry.url}'"
+                >
+                    <c:icon identifier="mimetypes-x-sys_redirect"/>
+                </b:link.newRecord>
+            </div>
         </f:spaceless>
     </td>
 </tr>

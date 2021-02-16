@@ -4,6 +4,7 @@ module.exports = function (grunt) {
     const sass = require('node-sass');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-regex-replace');
 
@@ -29,6 +30,15 @@ module.exports = function (grunt) {
                 }
             }
         },
+        'concat': {
+            'RedirectManager': {
+                'src': [
+                    // Specific order, so that components are available to other components at the right time
+                    'Resources/Private/JavaScript/*.js'
+                ],
+                'dest': 'Resources/Public/JavaScript/RedirectManager.js'
+            }
+        },
         'regex-replace': {
             'backend': {
                 'src': 'Resources/Public/Css/Backend/backend.min.css.map',
@@ -48,5 +58,5 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('default', ['sass', 'cssmin', 'regex-replace']);
+    grunt.registerTask('default', ['sass', 'cssmin', 'concat', 'regex-replace']);
 };

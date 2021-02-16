@@ -79,6 +79,9 @@
             <trans-unit id="backendModule.redirects.listNotFound.table.noEntriesFound" xml:space="preserve">
                 <source>No "404 Not Found" requests found.</source>
             </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.noEntriesFoundForFilter" xml:space="preserve">
+                <source>No "404 Not Found" requests for the current filter criteria found.</source>
+            </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.status" xml:space="preserve">
                 <source>Status</source>
             </trans-unit>
@@ -109,6 +112,9 @@
             <trans-unit id="backendModule.redirects.listNotFound.table.actions" xml:space="preserve">
                 <source>Actions</source>
             </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions.view" xml:space="preserve">
+                <source>View source URL in a new window</source>
+            </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.actions.edit" xml:space="preserve">
                 <source>Edit log entry</source>
             </trans-unit>
@@ -123,6 +129,28 @@
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.actions.unresolve" xml:space="preserve">
                 <source>Mark as not resolved</source>
+            </trans-unit>
+
+            <trans-unit id="backendModule.redirects.listNotFound.filter.dateFrom" xml:space="preserve">
+                <source>From</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.filter.dateTo" xml:space="preserve">
+                <source>To</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.filter.send" xml:space="preserve">
+                <source>Send</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.sorting" xml:space="preserve">
+                <source>Sort by</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.sorting.default" xml:space="preserve">
+                <source>Hit count</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.sorting.dateAsc" xml:space="preserve">
+                <source>Date ascending</source>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.sorting.dateDesc" xml:space="preserve">
+                <source>Date descending</source>
             </trans-unit>
         </body>
     </file>

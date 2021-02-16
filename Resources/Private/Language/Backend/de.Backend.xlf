@@ -51,6 +51,9 @@
             <trans-unit id="backendModule.redirects.listNotFound.table.noEntriesFound" xml:space="preserve">
                 <target>Keine "404 Not Found" Anfragen gefunden.</target>
             </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.noEntriesFoundForFilter" xml:space="preserve">
+                <target>Keine "404 Not Found" Anfragen für die gewählten Filter gefunden.</target>
+            </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.status" xml:space="preserve">
                 <target>Status</target>
             </trans-unit>
@@ -81,6 +84,9 @@
             <trans-unit id="backendModule.redirects.listNotFound.table.actions" xml:space="preserve">
                 <target>Aktionen</target>
             </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.table.actions.view" xml:space="preserve">
+                <target>URL in neuem Fenster anzeigen</target>
+            </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.actions.edit" xml:space="preserve">
                 <target>Log-Eintrag editieren</target>
             </trans-unit>
@@ -95,6 +101,28 @@
             </trans-unit>
             <trans-unit id="backendModule.redirects.listNotFound.table.actions.unresolve" xml:space="preserve">
                 <target>Als "nicht behoben" markieren</target>
+            </trans-unit>
+
+            <trans-unit id="backendModule.redirects.listNotFound.filter.dateFrom" xml:space="preserve">
+                <target>Von</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.filter.dateTo" xml:space="preserve">
+                <target>Bis</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.filter.send" xml:space="preserve">
+                <target>Senden</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.sorting" xml:space="preserve">
+                <target>Sortierung</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.sorting.default" xml:space="preserve">
+                <target>Hit count</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.sorting.dateAsc" xml:space="preserve">
+                <target>Datum (aufsteigend)</target>
+            </trans-unit>
+            <trans-unit id="backendModule.redirects.listNotFound.sorting.dateDesc" xml:space="preserve">
+                <target>Datum (absteigend)</target>
             </trans-unit>
         </body>
     </file>
